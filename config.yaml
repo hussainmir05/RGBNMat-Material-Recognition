@@ -1,0 +1,43 @@
+# =======================
+# Paths
+# =======================
+data:
+  train:
+    r: "/astori/data3/refined/_r512/*.png"
+    g: "/astori/data3/refined/_g512/*.png"
+    b: "/astori/data3/refined/_b512/*.png"
+    n: "/astori/data3/refined/_nir512/*.png"
+
+  val:
+    r: "/astori/data3/refined/_valid/_r512/*.png"
+    g: "/astori/data3/refined/_valid/_g512/*.png"
+    b: "/astori/data3/refined/_valid/_b512/*.png"
+    n: "/astori/data3/refined/_valid/_nir512/*.png"
+
+  test:
+    r: "/astori/data3/refined/_test/_r512/*.png"
+    g: "/astori/data3/refined/_test/_g512/*.png"
+    b: "/astori/data3/refined/_test/_b512/*.png"
+    n: "/astori/data3/refined/_test/_nir512/*.png"
+
+checkpoints_dir: "/astori/home/lab05/material_recognition/swin_ref_texture/fiveChSame/eval"
+
+# =======================
+# Hyperparameters
+# =======================
+training:
+  num_classes: 6
+  num_epochs: 80
+  batch_size: 32
+  lr: 0.0001
+  accumulate_grad_batches: 4
+  patience: 5
+  save_top_k: 14
+
+# =======================
+# Experiment Settings
+# =======================
+experiment:
+  version: "_metal_Fe_"
+  settings: ["rgbn"]  # could be ["rgb", "rgbn"]
+  log_dir: "eval"
